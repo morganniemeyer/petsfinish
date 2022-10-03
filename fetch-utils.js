@@ -30,10 +30,16 @@ export async function signOutUser() {
 /* Data functions */
 
 // > Part B: Export async function that
-//      - inserts (creates) a supplied pet argument into supabase
-//      - returns a single data object (not an array)
+export async function createFriend(pet) {
+    //      - inserts (creates) a supplied pet argument into supabase
+    //      - returns a single data object (not an array)
+    return await client.from('pets').insert(pet);
+}
 
 // > Part C: Export async function that
+export async function getBabs() {
+    return await client.from('pets').select('*');
+}
 //      - gets all pets from supabase
 //      - order the list by created date
 
