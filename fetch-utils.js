@@ -37,6 +37,9 @@ export async function createFriend(pet) {
 }
 
 // > Part C: Export async function that
+export async function getBabs() {
+    return await client.from('pets').select('*');
+}
 //      - gets all pets from supabase
 //      - order the list by created date
 
